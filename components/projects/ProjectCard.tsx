@@ -13,9 +13,10 @@ export interface Props {
     thumbnail: Thumbnail;
     liveDemoUrl: string;
     projectUrl: string;
+    category: string;
 }
 
-function ProjectCard({ name, shortDescription, thumbnail, liveDemoUrl, projectUrl }: Props) {
+function ProjectCard({ name, shortDescription, thumbnail, liveDemoUrl, projectUrl, category }: Props) {
     return (
         <div className="w-full px-4 md:w-1/2 lg:w-1/3">
             <div className="mb-8 rounded-[20px] bg-content1 text-content1-foreground p-4 shadow-md hover:shadow-lg overflow-hidden cursor-pointer">
@@ -29,10 +30,8 @@ function ProjectCard({ name, shortDescription, thumbnail, liveDemoUrl, projectUr
                     blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mO8dhkAAoUBqzrFAH4AAAAASUVORK5CYII="
                 />
 
-                <div className="flex items-center justify-between">
-                    <h4 className="mb-2 mt-3 text-xl font-semibold text-default-800">{name}</h4>
-                    <Chip size="sm">Web App</Chip>
-                </div>
+                <h4 className="mb-2 mt-3 text-xl font-semibold text-default-800">{name}</h4>
+                <Chip size="sm" className="mb-4">{category}</Chip>
                 <p className="text-default-600 text-sm mb-4">{shortDescription}</p>
                 <div className="flex gap-4">
                     <Button as={Link} size="sm" color="primary" variant="solid" startContent={<FaEye />} href={liveDemoUrl}>

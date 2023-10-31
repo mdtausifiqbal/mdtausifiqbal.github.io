@@ -21,7 +21,7 @@ async function Projects() {
                         See All Projects
                     </Button>
                 }>
-                {projects.map(({ name, shortDescription, liveDemoUrl, projectUrl, thumbnail }: ProjectCardProps, index: number) => (
+                {projects.map(({ name, shortDescription, liveDemoUrl, projectUrl, thumbnail, category }: ProjectCardProps, index: number) => (
                     <ProjectCard
                         key={index}
                         name={name}
@@ -29,6 +29,7 @@ async function Projects() {
                         liveDemoUrl={liveDemoUrl}
                         projectUrl={projectUrl}
                         thumbnail={thumbnail}
+                        category={category}
                     />
                 ))}
             </Section>

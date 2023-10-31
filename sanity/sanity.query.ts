@@ -34,6 +34,7 @@ export const getProjects = cache(async () => {
       thumbnail { alt, "image": asset->url},
       projectUrl,
       liveDemoUrl,
+      category
     }`,
     );
     return projects;
